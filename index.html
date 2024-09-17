@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/9710cf8566.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="w-3/4 mx-auto bg-blue-400 p-5 mt-10">
+                <h1 class="text-center font-bold text-2xl mb-2">My Text Editor</h1>
+                <div class="border solid 2px purple bg-red-50 p-2">
+                   <div class="flex justify-between">
+                     <div>
+                        <i class="fa-solid fa-bold" id="b"></i>
+                        <i class="fa-solid fa-italic" id="i"></i>
+                        <i class="fa-solid fa-underline" id="u"></i>
+                     </div>
+                    
+                     <div>
+                        <i class="fa-solid fa-align-left" id="left"></i>
+                        <i class="fa-solid fa-align-center" id="center"></i>
+                        <i class="fa-solid fa-align-right" id="right"></i>
+                        <i class="fa-solid fa-align-justify" id="justify"></i>
+                     </div>
+
+                     <div>
+                        
+                        <input type="color" id="color">
+                        
+                        <button id="increaseFont">A+</button>
+                        <button id="decreaseFont">A-</button>
+                     </div>
+                     
+                   </div>
+                   <div class="border-bottom 2px solid bg-yellow-400 overflow-hidden"></div>
+                     <div class="">
+                           <textarea name=" " id="pId" rows="10" cols="130" class="overflow-hidden">
+
+                           </textarea>
+                     </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <script src="js/style.js"></script>
+</body>
+</html>
+
+<!-- document.getElementById('increaseFont').addEventListener('click', () => {
+    let currentSize = window.getComputedStyle(editor).fontSize;
+    editor.style.fontSize = (parseFloat(currentSize) + 2) + 'px';
+});
+
+// Decrease font size
+document.getElementById('decreaseFont').addEventListener('click', () => {
+    let currentSize = window.getComputedStyle(editor).fontSize;
+    editor.style.fontSize = (parseFloat(currentSize) - 2) + 'px';
+}); -->
