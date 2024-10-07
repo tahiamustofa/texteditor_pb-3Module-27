@@ -20,7 +20,12 @@ document.getElementById('i').addEventListener('click',function() {
 
  document.getElementById('u').addEventListener('click',function() {
     const elements = document.getElementById('pId');
-    elements.style.textDecoration ='underline';
+    
+    if (elements.style.textDecoration = 'normal' ) {
+      elements.style.textDecoration ='underline';
+    } else {
+      elements.style.textDecoration = 'normal';
+    }
  })
  document.getElementById('left').addEventListener('click',function() {
     const elements = document.getElementById('pId');
