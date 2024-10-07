@@ -50,23 +50,36 @@ document.getElementById('i').addEventListener('click',function() {
 document.getElementById('color').addEventListener('click',function ( ) {
    const myText = document.getElementById('pId');
    const inputColor = document.getElementById('color');
-   const selectedColor= inputColor.value ;
+   const selectedColor= inputColor.value;
    myText.style.color = selectedColor;
 })
 
 
 const editor = document.getElementById('pId');
 
+const fontSizeId = document.getElementById('fontNumber');
+
+function fontShow() {
+  const currentSize = window.getComputedStyle(editor).fontSize;
+  fontSizeId.textContent = currentSize; 
+}
+fontShow();
+
 document.getElementById('increaseFont').addEventListener('click',function ( ) {
    const currentSize = window.getComputedStyle(editor).fontSize;
    editor.style.fontSize = (parseFloat(currentSize)+2) + 'px';
+   fontShow();
 })
+
+
 
 
 document.getElementById('decreaseFont').addEventListener('click',function() {
    const currentSize = window.getComputedStyle(editor).fontSize;
    editor.style.fontSize = parseFloat(currentSize)-2 + 'px';
+   fontShow();
 }) 
+
 
 
 
