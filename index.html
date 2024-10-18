@@ -9,8 +9,8 @@
 </head>
 <body>
     <main>
-        <section>
-            <div class="w-3/4 mx-auto bg-blue-400 p-5 mt-10">
+        <section  class="overflow-hidden w-full">
+            <div class="w-3/4 mx-auto bg-blue-400 p-5 mt-10 overflow-hidden">
                 <h1 class="text-center font-bold text-2xl mb-2">My Text Editor</h1>
                 <div class="border solid 2px purple bg-red-50 p-2">
                    <div class="flex justify-between">
@@ -29,10 +29,12 @@
 
                      <div>
                         
-                        <input type="color" id="color">
+                        
+
+                        <input type="color" id="coloInput">
                         
                         <span id="fontNumber"></span>
-                        
+
                         <button id="increaseFont">A+</button> 
                        
                         <button id="decreaseFont">A-</button>
@@ -41,7 +43,7 @@
                    </div>
                    <div class="border-bottom 2px solid bg-yellow-400 overflow-hidden"></div>
                      <div class="">
-                           <textarea name=" " id="pId" rows="10" cols="130" class="overflow-hidden">
+                           <textarea name=" " id="pId" rows="10" cols="130" class="w-full p-2 bg-white border border-gray-300 overflow-hidden resize-none">
 
                            </textarea>
                      </div>

@@ -52,73 +52,47 @@ document.getElementById('i').addEventListener('click',function() {
 //  });
 
 
-document.getElementById('color').addEventListener('click',function ( ) {
-   const myText = document.getElementById('pId');
-   const inputColor = document.getElementById('color');
-   const selectedColor= inputColor.value;
-   myText.style.color = selectedColor;
-})
-
+document.getElementById('coloInput').addEventListener('input',function() {
+  const myText = document.getElementById('pId');
+  const colorInput = document.getElementById('coloInput');
+  myText.style.color = colorInput.value;
+})// আপনি যখন ইনপুট ফিল্ডে নতুন কোনো মান প্রবেশ করান বা টাইপ করেন, তখনই এই ইভেন্টটি চালু হয়।
 
 const editor = document.getElementById('pId');
+const fontNumber = document.getElementById('fontNumber');
 
-const fontSizeId = document.getElementById('fontNumber');
+function fontShow( ){
+   const currentSize = getComputedStyle(editor).fontSize;
+   fontNumber.textContent = currentSize;
+   }
+fontShow( );
 
-function fontShow() {
-  const currentSize = window.getComputedStyle(editor).fontSize;
-  fontSizeId.textContent = currentSize; 
-}
-fontShow();
+const textArea = document.getElementById('pId');
 
-document.getElementById('increaseFont').addEventListener('click',function ( ) {
+
+document.getElementById('increaseFont').addEventListener('click',function () {
    const currentSize = window.getComputedStyle(editor).fontSize;
-   editor.style.fontSize = (parseFloat(currentSize)+2) + 'px';
-   fontShow();
+   editor.style.fontSize = (parseFloat(currentSize)+2) + 'px'; 
+if (textArea.scrollHeight > textArea.clientHeight) {
+   textArea.classList.add('overflow-y-auto');
+   } else {
+   textArea.classList.remove('overflow-y-auto');
+}
+   fontShow( );
 })
 
-
-
-
-document.getElementById('decreaseFont').addEventListener('click',function() {
+document.getElementById('decreaseFont').addEventListener('click',function( ) {
    const currentSize = window.getComputedStyle(editor).fontSize;
-   editor.style.fontSize = parseFloat(currentSize)-2 + 'px';
-   fontShow();
-}) 
+   editor.style.fontSize = (parseFloat(currentSize)-2) + 'px';
+   if (textArea.scrollHeight > textArea.clientHeight) {
+      
+      textArea.classList.remove('overflow-y-auto'); //decrease er jonno scroll proyojon nei tai
+  } else {
+      textArea.classList.add('overflow-y-auto');
+  }
+   fontShow( );
+})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//  const editor = document.getElementById('pId');
-
-// // Font Size Controls
-// document.getElementById('increaseFont').addEventListener('click', function(){
-//     let currentSize = window.getComputedStyle(editor).fontSize;
-//     editor.style.fontSize = (parseFloat(currentSize) + 2) + 'px';
-// });
-
-// document.getElementById('decreaseFont').addEventListener('click', function() {
-//     let currentSize = window.getComputedStyle(editor).fontSize;
-//     editor.style.fontSize = (parseFloat(currentSize) - 2) + 'px';
-// });
- 
- 
+// console.log(textArea.clientHeight); 
+// console.log(textArea.scrollHeight);
+// console.log(textArea) 
